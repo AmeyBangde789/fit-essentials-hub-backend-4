@@ -200,3 +200,11 @@ export const getProductsByBrand = async (req, res, next) => {
         return next(500, "internal server error");
     }
 }
+export const getProductsByCategory = async (req, res, next) => {
+    try {
+        const products = await product.find({ "productCategory": req.params.key });
+        res.json(products);
+    } catch (error) {
+        return next(500, "internal server error");
+    }
+}
