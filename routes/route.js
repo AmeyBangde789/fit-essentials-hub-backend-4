@@ -1,5 +1,5 @@
 import express from 'express';
-import { createProduct, deleteProducts, getAccessoriesproducts, getAllproduct, getAllproducts, getBenchRacksproducts, getCardioproducts, getMachinesproducts, getProductsByBrand, getProductsByCategory, getProductsByType, getSupplementsproducts,getaccTypeDiscount,getbyId, getrelatedProducts, getsuppDiscount, getsuppTypeDiscount, getweights_and_barbellsproducts, updateProduct } from '../controllers/product.controller.js';
+import { createProduct, deleteProducts, getAllproduct, getAllproducts, getProductsByBrand, getProductsByCategory, getProductsByType,getaccTypeDiscount,getbyId, getrelatedProducts, getsuppDiscount, getsuppTypeDiscount, updateProduct } from '../controllers/product.controller.js';
 const router= express.Router();
 
 
@@ -13,18 +13,9 @@ router.get('/suppdiscount/:key',getsuppDiscount)
 router.get('/supptypediscount/:key',getsuppTypeDiscount)
 router.get('/acctypediscount/:key',getaccTypeDiscount)
 
-router.get('/weights_and_barbells',getweights_and_barbellsproducts)
-router.get('/machines',getMachinesproducts)
-router.get('/cardio',getCardioproducts)
-router.get('/accessories',getAccessoriesproducts)
-router.get('/supplements',getSupplementsproducts)
-router.get('/benches_racks_grips',getBenchRacksproducts)
-
 router.get('/:id' , getbyId);
 
-
 router.post('/create', createProduct );
-
 
 router.put('/update/:id',updateProduct );
 

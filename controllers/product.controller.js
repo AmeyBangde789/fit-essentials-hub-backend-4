@@ -31,55 +31,6 @@ export const getAllproduct = async (req, res, next) => {
     }
 }
 
-export const getweights_and_barbellsproducts = async (req, res, next) => {
-    try {
-        const products = await product.find({ "productCategory": "Weights and Barbells" });
-        res.json(products);
-    } catch (error) {
-        return next(500, "internal server error");
-    }
-}
-export const getMachinesproducts = async (req, res, next) => {
-    try {
-        const products = await product.find({ "productCategory": "Machines" });
-        res.json(products);
-    } catch (error) {
-        return next(500, "internal server error");
-    }
-}
-export const getCardioproducts = async (req, res, next) => {
-    try {
-        const products = await product.find({ "productCategory": "Cardio" });
-        res.json(products);
-    } catch (error) {
-        return next(500, "internal server error");
-    }
-}
-export const getBenchRacksproducts = async (req, res, next) => {
-    try {
-        const products = await product.find({ "productCategory": "Benches, Racks and Grips" });
-        res.json(products);
-    } catch (error) {
-        return next(500, "internal server error");
-    }
-}
-export const getAccessoriesproducts = async (req, res, next) => {
-    try {
-        const products = await product.find({ "productCategory": "Accessories" });
-        res.json(products);
-    } catch (error) {
-        return next(500, "internal server error");
-    }
-}
-export const getSupplementsproducts = async (req, res, next) => {
-    try {
-        const products = await product.find({ "productCategory": "Supplements" });
-        res.json(products);
-    } catch (error) {
-        return next(500, "internal server error");
-    }
-}
-
 export const getbyId = async (req, res, next) => {
     try {
         const products = await product.findById(req.params.id);
